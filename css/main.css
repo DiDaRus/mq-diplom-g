@@ -200,8 +200,15 @@ ul {
     color: #b59f5b;
 }
 
+.desk {
+    display: none;
+}
+
 @media ( min-width: 481px ) {
-    body {
+    .page {
         display: none;
     }
+    .desk {
+    display: block;
+}
 }
