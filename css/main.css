@@ -199,3 +199,9 @@ ul {
 .tr-title:hover {
     color: #b59f5b;
 }
+
+@media ( min-width: 480px ) {
+    body {
+        display: none;
+    }
+}
