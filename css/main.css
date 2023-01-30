@@ -170,6 +170,7 @@ ul {
 .tr-content {
     border: 3px solid #b59f5b99;
     padding-left: 23px;
+    padding-right: 23px;
     padding-top: 35px;
     padding-bottom: 30px;
 }
