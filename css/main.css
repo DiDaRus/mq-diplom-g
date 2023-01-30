@@ -1,0 +1,201 @@
+/* основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: OpenSans;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../fonts/OpenSans-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../fonts/OpenSans-Regular.ttf");
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* обобщенные стили */
+.title {
+    /* общие стили для всех title */
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section {
+    /* общие стили для всех section */
+
+}
+
+.section-title {
+    /* общие стили для всех section-title */
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+.section-title:after {
+    /* общие стили для всех section-title:after */
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 43%;
+    height: 3px;
+    width: 65px;
+    background-color: #e1d9bd;
+}
+
+
+/* header style */
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url("../images/banner-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    z-index: -2;
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000070;
+    z-index: -1;
+}
+
+.burger {
+    position: absolute;
+    top: 36px;
+    right: 16px;
+    width: 23px;
+}
+
+.burger span {
+    display: block;
+    width: 23px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+.burger span:last-child {
+    margin: 0;
+}
+
+.header-logo-image {
+    width: 269px;
+    height: 61px;
+    margin-bottom: 45px;
+}
+
+.header-title {
+    width: 328px;
+    font-size: 26px;
+    color: #fff;
+    line-height: 36px;
+    padding: 0 15px;
+}
+
+/* header style end */
+
+/* trends style */
+.wrap-trends-banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+/* banner url */
+.trend1 {
+    background-image: url("../images/trend1.jpg");
+}
+
+.trend2 {
+    background-image: url("../images/trend2.jpg");
+}
+
+.trend3 {
+    background-image: url("../images/trend3.jpg");
+}
+
+.trend4 {
+    background-image: url("../images/trend4.jpg");
+}
+
+.trends-banner {
+    position: relative;
+    width: 100%;
+    padding: 18% 15px 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    font-size: 16px;
+}
+
+.trends-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000090;
+    z-index: -1;
+}
+
+.tr-content {
+    border: 3px solid #b59f5b99;
+    padding-left: 23px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+
+.tr-tags-list {
+    display: flex;
+    margin-bottom: 13px;
+}
+
+.tr-items a {
+    color: #b59f5b;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.tr-items a:hover {
+    text-decoration: underline;
+}
+
+.tr-title {
+    color: #fff;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.tr-title:hover {
+    color: #b59f5b;
+}
