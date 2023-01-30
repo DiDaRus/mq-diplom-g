@@ -209,6 +209,8 @@ ul {
         display: none;
     }
     .desk {
-    display: block;
-}
+        display: block;
+        text-align: center;
+        padding-top: 50%;
+    }
 }
