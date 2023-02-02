@@ -270,7 +270,8 @@ svg {
 .tr-content {
     width: 100%;
     border: 3px solid #b59f5b99;
-    padding-left: 23px;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-top: 35px;
     padding-bottom: 30px;
 }
