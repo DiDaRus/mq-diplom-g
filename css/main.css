@@ -502,7 +502,7 @@ input {
 
 .product-image {
     width: calc(100% - 40px);
-    height: calc(285px + 98px);
+    height: calc(285px + 128px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
