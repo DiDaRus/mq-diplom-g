@@ -40,6 +40,7 @@
         </div>
     </header>
     <header class="mob-header">
+
         <div class="mobile-navigation">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -56,6 +57,37 @@
         </div>
         <h1 class="title header-title">Блог о творчестве, спорте, и образе жизни</h1>
     </header>
+    <div class="popup-form-group">
+        <label class="checkbox-group">
+            <input type="checkbox" class="checkbox" required>
+            <div class="btn-text">Фидбек</div>
+            <div class="popup">
+                <h4 class="title section-title">Ваш фидбек</h4>
+                <img class="popup-close" src="svg/form-x.svg" alt="close popup">
+                <div class="feedback-container">
+                    <form>
+                        <label>
+                            <p>Как часто вы заходите на сайт ?</p>
+                            <select class="select">
+                                <option>Почти каждый день</option>
+                            </select>
+                            <p>Вы подписаны на email рассылку ?</p>
+                            <div class="radio-group">
+                                <input type="radio" id="yes"
+                                       class="radio" value="да">
+                                <label class="radio-checker" for="yes">Да</label>
+                                <input type="radio" id="no"
+                                       class="radio" value="нет">
+                                <label class="radio-checker" for="no">Нет</label>
+                            </div>
+                            <p>Расскажите, какой контент вы хотели бы видеть на нашем сайте ?</p>
+                            <input class="callback-more" type="text" placeholder="Может, больше рецептов ?">
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </label>
+    </div>
     <section class="trends-section">
         <h2 class="title section-title trends-title">Сейчас в тренде</h2>
         <div class="wrap-trends-banner">
@@ -388,11 +420,12 @@
                         <a href="#0">здесь</a>
                     </p>
                     <div class="price-items">
+
+                        <button class="cart">В магазин</button>
                         <div class="sale">
                             <p class="sale-price">1000 ₽</p>
                             <p class="price">800 ₽</p>
                         </div>
-                        <button class="cart">В магазин</button>
                     </div>
                 </div>
             </article>
