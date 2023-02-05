@@ -6,45 +6,6 @@
 -----------------
  */
 
-/*
-Навигация по строчкам:
-
-    20 - основные стили и типография
-    64 - обобщенные стили для универсальных классов
-    97 - стили header
-    134 - mobile header
-    187 - тренд-баннеры и ссылки
-    275 - стили main
-    288 - стили для main карточек ( articles )
-    326 - стили aside и карточек
-    358 - секция поиска
-    402 - секция подписки
-    408 - секция тегов
-    434 - секция тем
-    456 - секция продуктов
-    525 - ссылки на фоны продуктов
-    539 - футер и иконки
-
-    * 580 - media tablet
-
-    584 - tablet header
-    627 - tablet тренд-баннеры и ссылки
-    643 - tablet стили main
-    664 - tablet aside и карточек
-    674 - tablet секция продуктов
-    689 - tablet ссылки на фоны продуктов
-
-    * 706 - desktop media
-
-    712 - desktop header
-    760 - desktop navigation
-    793 - desktop тренд-баннеры и ссылки
-    811 - desktop стили main
-    830 - desktop стили aside и карточек
-    836 - desktop секция продуктов
-    846 - desktop ссылки на фоны продуктов
-*/
-
 /* основные стили и типография */
 * {
     margin: 0;
@@ -270,15 +231,13 @@ svg {
 .tr-content {
     width: 100%;
     border: 3px solid #b59f5b99;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 35px;
-    padding-bottom: 30px;
+    padding: 20px;
 }
 
 .tags-list {
     display: flex;
-    margin: 16px 0px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
     gap: 20px;
     text-transform: uppercase;
 }
@@ -305,6 +264,7 @@ svg {
 /* main style */
 .main-container {
     margin-top: 45px;
+    display: flex;
 }
 
 .main {
@@ -317,6 +277,7 @@ svg {
 /* main article style */
 .main-article img {
     width: 100%;
+    max-width: 381px;
 }
 
 .article .article-title a {
@@ -324,9 +285,11 @@ svg {
     color: #000;
 }
 
+    /*
 .article .article-title a:hover {
-    color: #b59f5b;
+   color: #b59f5b;
 }
+    */
 
 .main-article {
     padding-bottom: 20px;
@@ -338,6 +301,10 @@ svg {
     gap: 15px;
     font-size: 12px;
     padding: 35px 0px;
+}
+
+.article-content .tags-list {
+    margin-top: 16px;
 }
 
 .meta-items .time {
@@ -476,7 +443,6 @@ input {
 }
 
 /* product section */
-
 .product-section {
     padding: 0 15px;
 }
@@ -528,6 +494,10 @@ input {
     text-transform: lowercase;
     font-weight: inherit;
     margin-top: 15px;
+}
+
+.product-description a:hover {
+    text-decoration: underline;
 }
 
 .price-items {
@@ -597,8 +567,132 @@ input {
     color: #999;
 }
 
+/* popup */
+.popup-form-group {
+    position: absolute;
+    top: 3%;
+    right: 15%;
+    z-index: 3;
+}
+
+.btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #b59f5b;
+    font-weight: normal;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    width: 80%;
+    padding: 10px;
+    left: calc(0px + 10%);
+    top: calc(0px + 17vh);
+    background-color: #fff;
+    height: 65vh;
+}
+
+.popup-close {
+    position: absolute;
+    width: 20px;
+    top: -30px;
+    right: 0;
+}
+
+.checkbox:checked ~ .popup {
+    display: block;
+}
+
+.checkbox {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    z-index: 4;
+}
+
+.feedback-container p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.select {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+
+    padding-left: 10px;
+    padding-right: 25px;
+
+    margin: 0;
+
+    border: none;
+    background-color: #f4f7f6;
+
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #333333;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../svg/form-arrows.svg");
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+}
+
+.select {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.select:focus {
+    outline: 0px;
+}
+
+.radio-checker {
+    display: inline-block;
+    font-weight: normal;
+}
+
+.radio-checker::before {
+    content: "";
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background-image: url("../svg/form-empty-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+}
+
+.radio:focus + .radio-checker::before {
+    background-image: url("../svg/form-circle.svg");
+}
+
+.radio {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+}
+
+.callback-more {
+    font-weight: normal;
+    padding-bottom: 100px;
+}
+
 /* tablet media */
-@media (min-width: 768px) {
+@media (min-width: 641px) and (max-width: 1200px) {
 
     /* header */
     .mob-header {
@@ -613,7 +707,10 @@ input {
         top: 56px;
         right: 36px;
     }
-
+    .popup-form-group {
+        top: 5%;
+        right: 10%;
+    }
     .header {
         display: block;
         background-image: url("../images/banner-bg-tablet.jpg");
@@ -652,10 +749,6 @@ input {
         height: 245px;
     }
 
-    .tr-content {
-        padding-left: 33px;
-    }
-
     /* main */
     .main-container {
         display: flex;
@@ -663,6 +756,10 @@ input {
 
     .main {
         margin-right: 35px;
+    }
+
+    .article-title {
+        font-size: 17px;
     }
 
     .article-text {
@@ -712,8 +809,15 @@ input {
     }
 }
 
+/* tablet landscape*/
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+    .trends-banner {
+        width: 24%;
+    }
+}
+
 /* desktop media */
-@media (min-width: 1024px) {
+@media (min-width: 1201px) {
 
     /* header */
     .mob-header {
@@ -763,6 +867,12 @@ input {
         line-height: 75px;
     }
 
+    .popup {
+        max-width: 800px;
+        left: calc(50% - 400px);
+        top: calc(0px + 17vh);
+    }
+
     /* navigation */
     .nav-items {
         display: flex;
@@ -795,6 +905,11 @@ input {
         text-decoration: underline;
     }
 
+    .popup-form-group {
+        top: 6%;
+        right: 5%;
+    }
+
     /* trend banners */
     .trends-title {
         font-size: 20px;
@@ -808,19 +923,19 @@ input {
         height: 320px;
     }
 
-    .tr-content {
-        padding-left: 36px;
-    }
-
     /* main */
     .main {
         margin-right: 120px;
-        width: 100%;
+        width: 70%;
     }
 
     .main-article {
         display: flex;
         border: none;
+    }
+
+    .tags-list {
+        margin-top: 0px;
     }
 
     .main-article .article-image {
@@ -831,7 +946,7 @@ input {
 
     /* aside style */
     .aside {
-        width: 40%;
+        width: 25%;
     }
 
     /* product */
