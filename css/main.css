@@ -45,7 +45,7 @@ input {
     outline: 0px;
 }
 
-form>button {
+form > button {
     height: 50px;
     border: none;
     background: var(--main-color);
@@ -53,6 +53,10 @@ form>button {
     background-position: center;
     color: #fff;
     text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #000;
 }
 
 .visually-hidden {
@@ -219,6 +223,9 @@ a {
     line-height: 19px;
 }
 
+.article-title a:hover {
+    color: var(--main-color);
+}
 
 /* Тренды > Карточки > BG ссылки */
 
@@ -254,12 +261,12 @@ a {
     max-width: 100%;
 }
 
-.main-article>.article-content {
-    margin-top: 8px;
+.main-article ul li a:hover {
+    text-decoration: underline;
 }
 
-.article-content a:hover {
-    text-decoration: underline;
+.main-article > .article-content {
+    margin-top: 8px;
 }
 
 .article-content .article-title a {
@@ -311,13 +318,13 @@ a {
     margin-right: 16px;
 }
 
-.aside-article>.article-content .post-time {
+.aside-article > .article-content .post-time {
     font-size: 1.2em;
     line-height: 12px;
     font-weight: normal;
 }
 
-.aside-article>.article-content .article-title a{
+.aside-article > .article-content .article-title a {
     font-size: 1.4em;
     line-height: 20px;
 }
@@ -347,7 +354,7 @@ a {
     border: 1px solid var(--main-color);
 }
 
-.search-form>button {
+.search-form > button {
     position: absolute;
     width: 50px;
     top: 0;
@@ -356,7 +363,7 @@ a {
     background-image: url("../svg/search.svg");
 }
 
-.search-form>button:hover {
+.search-form > button:hover {
     background-color: #000;
 }
 
@@ -368,7 +375,7 @@ a {
 }
 
 /* Теги */
-.tags-section>ul {
+.tags-section > ul {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -378,7 +385,7 @@ a {
     color: #000;
 }
 
-.tags-section>ul li{
+.tags-section > ul li {
     display: inline-block;
     border: 3px solid #eee;
     padding: 2px 9px;
@@ -386,7 +393,7 @@ a {
     font-size: 1.2em;
 }
 
-.tags-section>ul li:hover {
+.tags-section > ul li:hover {
     border: 3px solid var(--main-color);
 }
 
@@ -396,23 +403,23 @@ a {
     margin-top: 41px;
 }
 
-.themes-section>ul {
+.themes-section > ul {
     margin-top: -19px;
 }
 
-.themes-section>ul li {
+.themes-section > ul li {
     display: block;
     padding: 10px 0px;
 }
 
-.themes-section>ul li a {
+.themes-section > ul li a {
     font-size: 1.4em;
     line-height: 22px;
     text-transform: capitalize;
     color: #000;
 }
 
-.themes-section>ul li a:hover {
+.themes-section > ul li a:hover {
     color: var(--main-color);
 }
 
@@ -447,9 +454,11 @@ a {
 .image-1 {
     background-image: url("../images/shop-item-mobile1.jpg");
 }
+
 .image-2 {
     background-image: url("../images/shop-item-mobile2.jpg");
 }
+
 .image-3 {
     background-image: url("../images/shop-item-mobile3.jpg");
 }
@@ -563,38 +572,6 @@ a {
     margin: 50px 0px;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (min-width: 768px) {
