@@ -7,6 +7,10 @@
  */
 
 /* основные стили и типография */
+html {
+    font-size: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,78 +21,84 @@
 
 @font-face {
     font-family: OpenSans;
-    src: url("../fonts/OpenSans-Bold.ttf");
-    font-weight: bold;
+    src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff");
+    font-family: OpenSans;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: OpenSans;
-    src: url("../fonts/OpenSans-Regular.ttf");
-    font-weight: normal;
+    src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff");
+    font-family: OpenSans;
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
-a {
-    text-decoration: none;
+:root {
+    --main-color: #b59f5b;
+}
+
+input {
+    outline: 0px;
+}
+
+form>button {
+    height: 50px;
+    border: none;
+    background: var(--main-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 ul {
     list-style-type: none;
 }
 
-button {
-    height: 50px;
-    border: none;
-    background-color: #b59f5b;
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
+a {
     text-transform: uppercase;
-    color: #fff;
-    width: 100%;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #000;
-}
-
-/* обобщенные стили. Уточнения для каждого разрешения - в соответствующих media */
 .title {
-    /* общие стили для всех title */
-    text-align: center;
+    /* Все заголовки в верхнем регистре */
     text-transform: uppercase;
 }
 
-.section-main-style {
-    /* общие стили для всех section-main-style */
-    width: 100%;
-}
 
-.section-title {
-    /* общие стили для всех section-title */
-    position: relative;
-    margin-top: 40px;
-    margin-bottom: 35px;
-    font-size: 1rem;
-}
-
-.section-title:after {
-    /* общие стили для всех section-title:after */
-    content: '';
-    position: absolute;
-    bottom: -9px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 3px;
-    width: 65px;
-    background-color: #e1d9bd;
-}
-
-/* header */
-.header {
+/* Шапочка */
+.navigation {
     display: none;
-    position: relative;
-    background-size: cover;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+    width: 100%;
+    min-height: 640px;
+    background-image: url("https://github.com/netology-code/mq-diploma/blob/master/sources/img/banner-mobile.jpg?raw=true");
     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     z-index: 0;
 }
 
@@ -97,878 +107,511 @@ button:hover {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
-    background-color: #00000099;
+    left: 0;
+    background-color: #0009;
     z-index: -1;
 }
 
-.container {
-    padding: 0 15px;
+.header a {
+    height: 100%;
+    width: 268px;
+    margin-top: 225px;
+}
+
+.header img.header-logo-image {
     width: 100%;
 }
 
-.no-mobile-navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.header-burger {
+    position: absolute;
+    top: 27px;
+    right: 13px;
+    width: 30px;
 }
 
 .header-title {
     color: #fff;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    font-size: 26px;
+    line-height: 35px;
+    padding-top: 33px;
+    width: 280px;
 }
 
-/* mobile header style */
-.mob-header a {
-    display: block;
-    width: 269px;
-    height: 61px;
+.container {
+    width: inherit;
 }
 
-svg {
-    position: absolute;
-    top: 36px;
-    right: 16px;
-    width: 23px;
-}
+/* Тренды > Заголовок */
 
-.mobile-navigation a {
-    margin-bottom: 45px;
-}
-
-.mob-header {
+.section-title {
+    margin-bottom: 35px;
+    text-align: center;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-image: url("../images/banner-mobile.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 100vh;
-    z-index: -2;
+    font-size: 1.6rem;
+    line-height: 27px;
 }
 
-.mob-header:after {
+.section-title:after {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #00000099;
-    z-index: -1;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 65px;
+    border-bottom: 3px solid var(--main-color);
 }
 
-.mob-header .header-title {
-    width: 328px;
-    font-size: 26px;
-    color: #fff;
-    line-height: 36px;
-    padding: 0 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* banner url */
-.trend1 {
-    background-image: url("../images/trend1.jpg");
-}
-
-.trend2 {
-    background-image: url("../images/trend2.jpg");
-}
-
-.trend3 {
-    background-image: url("../images/trend3.jpg");
-}
-
-.trend4 {
-    background-image: url("../images/trend4.jpg");
-}
-
-/* trends style */
-.trends-title {
-    font-size: 16px;
-}
+/* Тренды > Карточки */
 
 .wrap-trends-banner {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 3px;
+    flex-direction: column;
+    margin-top: 32px;
 }
 
 .trends-banner {
-    position: relative;
+    min-height: 232px;
+    padding: 15px 17px 15px 14px;
     display: flex;
-    align-items: flex-end;
-    width: 100%;
-    height: 230px;
-    padding: 15px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    margin-bottom: 2px;
+    position: relative;
     z-index: 0;
-    font-size: 16px;
 }
 
-.trends-banner:before {
+.trends-banner::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
-    background-color: #00000090;
+    left: 0;
+    background-color: #0007;
     z-index: -1;
 }
 
 .tr-content {
     width: 100%;
-    border: 3px solid #b59f5b99;
-    padding: 20px;
+    padding: 28px 20px 29px 20px;
+    align-self: flex-end;
+    border: 3px solid var(--main-color);
 }
 
 .tags-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-    gap: 20px;
-    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.tag-item a {
-    color: #b59f5b;
+.tags-list li {
+    display: inline-block;
+    margin-right: 17px;
 }
 
-.tag-item a:hover {
+.tags-list a {
+    color: var(--main-color);
+    font-size: 14px;
+}
+
+.article-title a {
+    font-size: 16px;
+    color: #fff;
+    line-height: 19px;
+}
+
+
+/* Тренды > Карточки > BG ссылки */
+
+.trend1 {
+    background-image: url("https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend1.jpg?raw=true");
+}
+
+.trend2 {
+    background-image: url("https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend2.jpg?raw=true");
+}
+
+.trend3 {
+    background-image: url("https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend3.jpg?raw=true");
+}
+
+.trend4 {
+    background-image: url("https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend4.jpg?raw=true");
+}
+
+/* Main */
+.main-container {
+    margin-top: 42px;
+    padding: 0px 15px;
+}
+
+/* Main > article */
+
+.main-article {
+    margin-bottom: 56px;
+}
+
+.main-article img {
+    max-width: 100%;
+}
+
+.main-article>.article-content {
+    margin-top: 8px;
+}
+
+.article-content a:hover {
     text-decoration: underline;
 }
 
-.tr-content .article-title a {
-    text-transform: uppercase;
-    color: #fff;
-    line-height: 20px;
-    font-size: 16px;
-}
-
-.tr-content .article-title a:hover {
-    color: #b59f5b;
-}
-
-/* main style */
-.main-container {
-    margin-top: 45px;
-    display: flex;
-}
-
-.main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-/* main article style */
-.main-article img {
-    width: 100%;
-    max-width: 381px;
-}
-
-.article .article-title a {
-    text-transform: uppercase;
+.article-content .article-title a {
     color: #000;
 }
 
-    /*
-.article .article-title a:hover {
-   color: #b59f5b;
-}
-    */
-
-.main-article {
-    padding-bottom: 20px;
-    border-bottom: 3px solid #eeeeee;
+.article-content .article-title a:hover {
+    color: var(--main-color);
 }
 
-.meta-items {
-    display: flex;
-    gap: 15px;
-    font-size: 12px;
-    padding: 35px 0px;
+.meta-items p {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-top: 18px;
+    margin-bottom: 16px;
 }
 
-.article-content .tags-list {
-    margin-top: 16px;
-}
-
-.meta-items .time {
-    color: #888888;
-    font-weight: normal;
+.time {
+    color: #888;
+    margin-right: 5px;
 }
 
 .article-text {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4em;
     font-weight: normal;
+    line-height: 21px;
 }
 
-/* aside style */
+/* aside */
+
 .aside {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    width: 100%;
+
 }
 
-/* aside article style */
+/* aside > Last post section */
+
+.section-main-style {
+    margin-top: 35px;
+}
+
 .aside-article {
     display: flex;
-    align-items: flex-start;
     margin-bottom: 20px;
 }
 
 .aside-article img {
-    margin-right: 20px;
-    width: 70px;
-    height: 70px;
+    max-width: 100%;
+    height: 72px;
+    margin-right: 16px;
 }
 
-.article-content h4 {
-    font-size: 14px;
-    line-height: 18px;
+.aside-article>.article-content .post-time {
+    font-size: 1.2em;
+    line-height: 12px;
+    font-weight: normal;
 }
 
-.post-time {
-    font-size: 12px;
-    color: #888888;
+.aside-article>.article-content .article-title a{
+    font-size: 1.4em;
+    line-height: 20px;
 }
 
-/* search form */
-input {
-    outline: 0px;
-    width: 100%;
-    border: none;
-    background-color: #f4f7f6;
-    height: 50px;
-    padding: 20px;
+/* Форма поиска */
+
+.search-section {
+    margin-top: 57px;
 }
 
 .search-form {
-    position: relative;
-    margin-top: 52px;
-}
-
-.input-label-area:focus {
-    border: 1px solid #b59f5b;
-}
-
-.search-form button {
-    width: 50px;
-    background-image: url("../svg/search.svg");
-    background-size: 18px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 15px;
-    box-sizing: border-box;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
-}
-
-/* follow form */
-.follow-form button {
-    margin-top: 17px;
-}
-
-/* tags section */
-.tags-section li {
-    display: inline-block;
-}
-
-.tags-section .tag-item {
-    display: inline-block;
-    padding: 10px;
-    border: 3px solid #f4f3f1;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    color: #000;
-}
-
-.tags-section .tag-item:hover {
-    border: 3px solid #b59f5b;
-}
-
-.tags-section .tags-item:last-child {
-    margin: 0;
-}
-
-/* theme section */
-.theme-item {
-    font-weight: bold;
-    font-size: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #eee;
-    color: #000;
-    display: block;
-}
-
-.theme-item:hover {
-    color: #b59f5b;
-}
-
-.theme-item span {
-    font-size: 13px;
-    vertical-align: super;
-    color: #b59f5b;
-}
-
-/* product section */
-.product-section {
-    padding: 0 15px;
-}
-
-.product-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: space-between;
-}
-
-.product {
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+.input-label-area {
     width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    background-color: #f4f7f6;
+    color: #888;
+    border: none;
+}
+
+.input-label-area:focus {
+    border: 1px solid var(--main-color);
+}
+
+.search-form>button {
+    position: absolute;
+    width: 50px;
+    top: 0;
+    right: 0;
+    background-size: 20px;
+    background-image: url("../svg/search.svg");
+}
+
+.search-form>button:hover {
+    background-color: #000;
+}
+
+/* Рассылка Email */
+
+.follow-submit {
+    margin-top: 13px;
+    width: 100%;
+}
+
+/* Теги */
+.tags-section>ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tags-section a {
+    color: #000;
+}
+
+.tags-section>ul li{
+    display: inline-block;
+    border: 3px solid #eee;
+    padding: 2px 9px;
+    margin-right: 0px;
+    font-size: 1.2em;
+}
+
+.tags-section>ul li:hover {
+    border: 3px solid var(--main-color);
+}
+
+/* Темы */
+
+.themes-section {
+    margin-top: 41px;
+}
+
+.themes-section>ul {
+    margin-top: -19px;
+}
+
+.themes-section>ul li {
+    display: block;
+    padding: 10px 0px;
+}
+
+.themes-section>ul li a {
+    font-size: 1.4em;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.themes-section>ul li a:hover {
+    color: var(--main-color);
+}
+
+.themes-section span {
+    color: var(--main-color);
+    vertical-align: super;
+}
+
+/* Товары */
+
+.product-section {
+    padding: 0px 15px;
+    margin-top: 38px;
+}
+
+.product {
     margin-bottom: 25px;
 }
 
-.product-bordered {
-    border: 3px solid #b59f5b;
-    padding: 25px 25px 25px 25px;
-}
+/* Товары > Фон */
 
 .product-image {
-    width: 285px;
-    height: 285px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: -35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 86%;
+    min-height: 286px;
+}
+
+.image-1 {
+    background-image: url("../images/shop-item-mobile1.jpg");
+}
+.image-2 {
+    background-image: url("../images/shop-item-mobile2.jpg");
+}
+.image-3 {
+    background-image: url("../images/shop-item-mobile3.jpg");
+}
+
+/* Товар > Описание */
+
+.product-bordered {
+    margin-top: -30px;
+    padding: 28px 15px;
+    border: 3px solid #b59f5b99;
+    min-height: 219px;
 }
 
 .product-title {
     text-transform: uppercase;
-    margin-top: 25px;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 1.7em;
+    margin-top: 19px;
+    margin-bottom: 5px;
 }
 
 .product-description {
+    font-size: 1.5rem;
     font-weight: normal;
 }
 
 .product-description a {
-    color: #b59f5b;
     text-transform: lowercase;
-    font-weight: inherit;
-    margin-top: 15px;
+    font-size: 1.5rem;
+    color: var(--main-color);
 }
 
 .product-description a:hover {
     text-decoration: underline;
 }
 
+/* Товары > Корзина */
+
 .price-items {
     display: flex;
-    align-items: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .sale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 
 .sale-price {
+    font-size: 1.4em;
     text-decoration: line-through;
 }
 
-/* product images bg link - mobile */
-.image-1 {
-    background-image: url("../images/shop-item-mobile1.jpg");
+.price {
+    font-size: 2.1em;
 }
 
-.image-2 {
-    background-image: url("../images/shop-item-mobile2.jpg");
+.cart {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: var(--main-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    text-transform: uppercase;
 }
 
-.image-3 {
-    background-image: url("../images/shop-item-mobile3.jpg");
+/* Подвал */
+
+.footer {
+    margin-top: 50px;
+    padding: 0px 15px;
 }
 
-/* footer */
+/* Подвал > Фон */
 .socials {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    height: 80px;
-    margin-top: 45px;
+    padding: 23px;
+    gap: 25px;
     background-color: #f4f7f6;
 }
 
 .social-link {
+    display: inline-block;
     width: 20px;
     height: 20px;
-    display: inline-block;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
 }
 
 .social-dribbble {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg");
+    background-image: url("../svg/001-dribbble.svg");
 }
 
 .social-pinterest {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg");
+    background-image: url("../svg/001-pinterest.svg");
 }
 
 .social-tamblr {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+    background-image: url("../svg/003-tumblr.svg");
 }
 
 .copyright {
     display: block;
-    margin: 50px auto;
-    width: fit-content;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 40px;
     color: #999;
+    font-size: 1.1em;
+    margin: 50px 0px;
+    text-align: center;
 }
 
-/* popup */
-.popup-form-group {
-    position: absolute;
-    top: 3%;
-    right: 15%;
-    z-index: 3;
-}
 
-.btn-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 30px;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid #b59f5b;
-    font-weight: normal;
-}
 
-.popup {
-    display: none;
-    position: fixed;
-    width: 80%;
-    padding: 10px;
-    left: calc(0px + 10%);
-    top: calc(0px + 17vh);
-    background-color: #fff;
-    height: 65vh;
-}
 
-.popup-close {
-    position: absolute;
-    width: 20px;
-    top: -30px;
-    right: 0;
-}
 
-.checkbox:checked ~ .popup {
-    display: block;
-}
 
-.checkbox {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    width: 1px;
-    height: 1px;
-    z-index: 4;
-}
 
-.feedback-container p {
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
 
-.select {
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    height: 38px;
 
-    padding-left: 10px;
-    padding-right: 25px;
 
-    margin: 0;
 
-    border: none;
-    background-color: #f4f7f6;
 
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    color: #333333;
 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("../svg/form-arrows.svg");
-    background-size: 10px;
-    background-repeat: no-repeat;
-    background-position: right 5px center;
-}
 
-.select {
-    margin-bottom: 20px;
-    font-weight: normal;
-}
 
-.select:focus {
-    outline: 0px;
-}
 
-.radio-checker {
-    display: inline-block;
-    font-weight: normal;
-}
 
-.radio-checker::before {
-    content: "";
-    margin-right: 8px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
-    background-image: url("../svg/form-empty-circle.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 20px;
-}
 
-.radio:focus + .radio-checker::before {
-    background-image: url("../svg/form-circle.svg");
-}
 
-.radio {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    width: 1px;
-    height: 1px;
-}
 
-.callback-more {
-    font-weight: normal;
-    padding-bottom: 100px;
-}
 
-/* tablet media */
-@media (min-width: 641px) and (max-width: 1200px) {
 
-    /* header */
-    .mob-header {
-        display: none;
-    }
 
-    .navigation {
-        display: none;
-    }
 
-    svg {
-        top: 56px;
-        right: 36px;
-    }
-    .popup-form-group {
-        top: 5%;
-        right: 10%;
-    }
-    .header {
-        display: block;
-        background-image: url("../images/banner-bg-tablet.jpg");
-    }
 
-    .header .container {
-        min-height: 400px;
-        padding-top: 46px;
-        padding-left: 36px;
-        padding-right: 36px;
-    }
 
-    .container {
-        padding: 0 35px;
-    }
 
-    .header a {
-        width: 158px;
-        height: 36px;
-    }
 
-    .header-title {
-        padding-top: 103px;
-        width: 611px;
-        font-size: 40px;
-        line-height: 55px;
-    }
 
-    /* trend banner */
-    .trends-title {
-        font-size: 18px;
-    }
 
-    .trends-banner {
-        width: calc(50% - 2px);
-        height: 245px;
-    }
 
-    /* main */
-    .main-container {
-        display: flex;
-    }
 
-    .main {
-        margin-right: 35px;
-    }
 
-    .article-title {
-        font-size: 17px;
-    }
 
-    .article-text {
-        font-size: 15px;
-    }
-
-    .main-article:last-child {
-        border: none;
-    }
-
-    /* aside */
-    .aside {
-        width: 75%;
-    }
-
-    .last-post-section h4 {
-        margin-top: 0px;
-    }
-
-    /* product */
-    .product {
-        width: calc(50% - 13px);
-    }
-
-    .product-image {
-        width: 292px;
-        height: 227px;
-    }
-
-    .product-bordered {
-        height: 265px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* product images bg link - tablet */
-    .image-1 {
-        background-image: url("../images/shop-item-tablet1.jpg");
-    }
-
-    .image-2 {
-        background-image: url("../images/shop-item-tablet2.jpg");
-    }
-
-    .image-3 {
-        background-image: url("../images/shop-item-tablet3.jpg");
-    }
-}
-
-/* tablet landscape*/
-@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-    .trends-banner {
-        width: 24%;
-    }
-}
-
-/* desktop media */
-@media (min-width: 1201px) {
-
-    /* header */
-    .mob-header {
-        display: none;
-    }
-
-    .no-mobile-navigation {
-        display: flex;
-        width: 100%;
-    }
-
-    .navigation {
-        display: block;
-    }
-
-    .header svg {
-        display: none;
-    }
-
-    .header {
-        display: block;
-        background-image: url("../images/banner-bg.jpg");
-    }
-
-    .header .container {
-        min-height: 450px;
-        padding-top: 29px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .header a {
-        width: 179px;
-        height: 41px;
-    }
-
-    .header-title {
-        padding-top: 126px;
-        width: 688px;
-        font-size: 45px;
-        line-height: 75px;
-    }
-
-    .popup {
-        max-width: 800px;
-        left: calc(50% - 400px);
-        top: calc(0px + 17vh);
-    }
-
-    /* navigation */
-    .nav-items {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .nav-list {
-        display: flex;
-        font-size: 13px;
-    }
-
-    .nav-list li {
-        margin-right: 35px;
-    }
-
-    .nav-list li:last-child {
-        margin: 0;
-    }
-
-    .nav-list li a {
-        font-weight: normal;
-        text-transform: uppercase;
-        color: #fff;
-        opacity: .8;
-    }
-
-    .nav-list li a:hover {
-        opacity: 1;
-        text-decoration: underline;
-    }
-
-    .popup-form-group {
-        top: 6%;
-        right: 5%;
-    }
-
-    /* trend banners */
-    .trends-title {
-        font-size: 20px;
-    }
-
+@media (min-width: 768px) {
     .wrap-trends-banner {
-        flex-wrap: nowrap;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .trends-banner {
-        height: 320px;
-    }
 
-    /* main */
-    .main {
-        margin-right: 120px;
-        width: 70%;
     }
+}
 
-    .main-article {
-        display: flex;
-        border: none;
-    }
+@media (min-width: 1200px) {
 
-    .tags-list {
-        margin-top: 0px;
-    }
+}
 
-    .main-article .article-image {
-        height: 294px;
-        min-width: 381px;
-        margin-right: 30px;
-    }
+@media (min-width: 166px) {
 
-    /* aside style */
-    .aside {
-        width: 25%;
-    }
-
-    /* product */
-    .product {
-        width: calc(33% - 14px);
-    }
-
-    .product-image {
-        width: 300px;
-        height: 204px;
-    }
-
-    /* product images bg link - desktop */
-    .image-1 {
-        background-image: url("../images/shop-item-desk1.jpg");
-    }
-
-    .image-2 {
-        background-image: url("../images/shop-item-desk2.jpg");
-    }
-
-    .image-3 {
-        background-image: url("../images/shop-item-desk3.jpg");
-    }
 }
