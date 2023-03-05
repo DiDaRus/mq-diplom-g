@@ -10,84 +10,31 @@
 </head>
 <body>
 <div class="page">
-    <header class="header">
-        <div class="container">
-            <div class="no-mobile-navigation">
-                <a href="/">
-                    <img class="header-logo-image" src="svg/noemi-logo.svg" alt="noemi logo">
-                </a>
-                <div class="navigation">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#0" class="nav-link">Главная</a></li>
-                        <li class="nav-item"><a href="#0" class="nav-link">Посты</a></li>
-                        <li class="nav-item"><a href="#0" class="nav-link">Статьи</a></li>
-                        <li class="nav-item"><a href="#0" class="nav-link">Теги</a></li>
-                        <li class="nav-item"><a href="#0" class="nav-link">Темы</a></li>
-                        <li class="nav-item"><a href="#0" class="nav-link">Контакты</a></li>
-                    </ul>
-                </div>
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6ZM3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12ZM3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z"
-                              fill="#ffffff"></path>
-                    </g>
-                </svg>
-            </div>
-            <h1 class="title header-title">Блог о творчестве, спорте, и образе жизни</h1>
+    <header class="header container">
+        <a href="/">
+            <img class="header-logo-image" src="svg/noemi-logo.svg" alt="noemi logo">
+        </a>
+        <div class="navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#0" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="#0" class="nav-link">Посты</a></li>
+                <li class="nav-item"><a href="#0" class="nav-link">Статьи</a></li>
+                <li class="nav-item"><a href="#0" class="nav-link">Теги</a></li>
+                <li class="nav-item"><a href="#0" class="nav-link">Темы</a></li>
+                <li class="nav-item"><a href="#0" class="nav-link">Контакты</a></li>
+            </ul>
         </div>
-    </header>
-    <header class="mob-header">
-
-        <div class="mobile-navigation">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6ZM3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12ZM3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z"
-                          fill="#ffffff"></path>
-                </g>
-            </svg>
-            <a href="/">
-                <img class="header-logo-image" src="svg/noemi-logo.svg" alt="noemi logo">
-            </a>
-        </div>
+        <svg class="header-burger" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6ZM3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12ZM3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z"
+                      fill="#ffffff"></path>
+            </g>
+        </svg>
         <h1 class="title header-title">Блог о творчестве, спорте, и образе жизни</h1>
     </header>
-    <div class="popup-form-group">
-        <label class="checkbox-group">
-            <input type="checkbox" class="checkbox" required>
-            <div class="btn-text">Фидбек</div>
-            <div class="popup">
-                <h4 class="title section-title">Ваш фидбек</h4>
-                <img class="popup-close" src="svg/form-x.svg" alt="close popup">
-                <div class="feedback-container">
-                    <form>
-                        <label>
-                            <p>Как часто вы заходите на сайт ?</p>
-                            <select class="select">
-                                <option>Почти каждый день</option>
-                            </select>
-                            <p>Вы подписаны на email рассылку ?</p>
-                            <div class="radio-group">
-                                <input type="radio" id="yes"
-                                       class="radio" value="да">
-                                <label class="radio-checker" for="yes">Да</label>
-                                <input type="radio" id="no"
-                                       class="radio" value="нет">
-                                <label class="radio-checker" for="no">Нет</label>
-                            </div>
-                            <p>Расскажите, какой контент вы хотели бы видеть на нашем сайте ?</p>
-                            <input class="callback-more" type="text" placeholder="Может, больше рецептов ?">
-                        </label>
-                    </form>
-                </div>
-            </div>
-        </label>
-    </div>
     <section class="trends-section">
         <h2 class="title section-title trends-title">Сейчас в тренде</h2>
         <div class="wrap-trends-banner">
@@ -336,7 +283,7 @@
             <section class="section-main-style search-section">
                 <form action="/" class="search-form">
                     <label class="input-label-search">
-                        <span class="label-text visually-hidden">Поиск по сайту</span>
+                        <span class="label-text visually-hidden" hidden >Поиск по сайту</span>
                         <input type="search" class="input-label-area" placeholder="Найти...">
                     </label>
                     <button type="submit">
@@ -356,7 +303,7 @@
             </section>
             <section class="section-main-style tags-section">
                 <h4 class="title section-title">Теги</h4>
-                <ul>
+                <ul class="tags-list">
                     <li>
                         <a href="#0" class="tag-item">Fashion</a>
                     </li>
@@ -385,7 +332,7 @@
             </section>
             <section class="section-main-style themes-section">
                 <h4 class="title section-title">Темы</h4>
-                <ul>
+                <ul class="tags-list">
                     <li>
                         <a href="#0" class="theme-item">Красота <span>12</span></a>
                     </li>
@@ -420,12 +367,11 @@
                         <a href="#0">здесь</a>
                     </p>
                     <div class="price-items">
-
-                        <button class="cart">В магазин</button>
                         <div class="sale">
                             <p class="sale-price">1000 ₽</p>
                             <p class="price">800 ₽</p>
                         </div>
+                        <button class="cart">В магазин</button>
                     </div>
                 </div>
             </article>
