@@ -283,7 +283,7 @@
             <section class="section-main-style search-section">
                 <form action="/" class="search-form">
                     <label class="input-label-search">
-                        <span class="label-text visually-hidden" hidden >Поиск по сайту</span>
+                        <span class="label-text visually-hidden" hidden>Поиск по сайту</span>
                         <input type="search" class="input-label-area" placeholder="Найти...">
                     </label>
                     <button type="submit">
@@ -420,6 +420,46 @@
         </ul>
         <a href="#0" class="copyright">Copyright © 2009–2019 City Blog LLC.</a>
     </footer>
+    <div class="feedback">
+        <form class="fb-form">
+            <h2 class="fb-title">Ваш фидбек</h2>
+            <label class="fb-select">
+                <p>Как часто вы заходите на сайт?</p>
+                <select class="fb-select-items">
+                    <option class="select-item" value="Почти каждый день">Почти каждый день</option>
+                    <option class="select-item" value="Раз в несколько дней">Раз в несколько дней</option>
+                    <option class="select-item" value="Раз в несколько недель">Раз в несколько недель</option>
+                    <option class="select-item" value="Несколько раз в год">Несколько раз в год</option>
+                </select>
+            </label>
+            <p>Вы подписаны на e-mail-рассылку?</p>
+            <div class="follow-radio">
+                <input class="done-radio" type="radio" id="yes" value="да">
+                <label class="done-radio-label" for="yes">Да</label>
+                <input class="done-radio" type="radio" id="no" value="нет">
+                <label class="done-radio-label" for="no">Нет</label>
+            </div>
+            <label class="fb-textField" for="message">
+                <p>Расскажите, какой контент вы хотели бы видеть на нашем сайте?</p>
+                <textarea id="message" placeholder="Может, больше рецептов?"></textarea>
+            </label>
+            <input type="submit" class="fb-submit"/>
+            <button type="button" onclick="closeFeedback()" class="fb-close"></button>
+        </form>
+    </div>
+    <div class="openFeedback">
+        <button onclick="openFeedback()">Фидбэк</button>
+    </div>
 </div>
+<script>
+    let closeFeedback = () => {
+        let fbContainer = document.querySelector ('.feedback');
+        fbContainer.style.display = 'none'
+    }
+    let openFeedback = () => {
+        let fbContainer = document.querySelector ('.feedback');
+        fbContainer.style.display = 'block'
+    }
+</script>
 </body>
 </html>
